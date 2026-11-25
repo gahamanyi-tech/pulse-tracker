@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta  naame="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Bank Project Pulse</title>
+    <link rel="stylesheet" href="/styles.css"> 
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'/>">
+    </head>
+    <body>
+        <header class="topbar">
+            <div>
+                <h1>World Bank Project Pulse</h1>
+                <p class="subtitle">Search, filter, and sort public development projects</p>
+            </div>
+            <div class="node-badge" id="node-badge">Server: loading...</div>
+        </header>
+
+        <main class="container">
+            <section class="controls" aria-label="Search and filter controls">
+              <div class="control-group grow">
+                <label for="search-input">Keyword search</label>
+                <input
+                id="search-input"
+                type="search"
+                placeholder="e.g., health, energy, water, transport..."
+                />
+              </div>
+
+              <div class="contol-group">
+                <label for="status-filter">Status</label>
+                <select id="status-filter">
+                    <option value="ALL">All Statuses</option>
+                </select>
+              </div>
+
+              <div class="control-group">
+                <label for="sector-filter">Sector</label>
+                <select id="sector-filter">
+                    <option value="ALL">All Sectors</option>
+                </select>
+              </div>
+
+              <div class="control-group">
+                <label for="sort-select">Sort By</label>
+                <select id="sort-select">
+                    <option value="commitment-desc">Commitment (High to Low)</option>
+                    <option value="commitment-asc">Commitment (Low to High)</option>
+                    <option value="title-asc">Title (A - Z)</option>
+                    <option value="country-asc">Country (A - Z)</option>
+                </select>
+              </div>
+
+              <div class="control-group actions">
+                <button id="refresh-btn" type="button">Search / Refresh</button>
+              </div>
+            </section>
+
+            <section class="summary-bar" id="summary-bar">
+                <span id="result-count">0 projects shown</span>
+                 <span id="meta-info"></span>
+            </section>
+
+            <div id="status-banner" class="banner hidden" role="alert"></div>
+
+            <section id="projects-grid" class="grid" aria-live="polite"></section>
+        </main>
+
+        <script src="/app.js"></script>
+    </body>
+</html>
