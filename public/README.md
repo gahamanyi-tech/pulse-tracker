@@ -154,4 +154,5 @@ for i in {1..6}; do curl -s http://localhost/api/health; echo ""; done
 * **Failover check:**
 Stop `pulse-app` on one web node (`pm2 stop pulse-app`), verify `7270-lb-01` continues returning `200 OK` from the healthy node, then bring the stopped node back up (`pm2 start pulse-app`).
     
+Demo Video: https://youtu.be/j_R7xw4BUk0
 
